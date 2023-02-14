@@ -1459,7 +1459,7 @@ class Mailbox
                     $newString .= \mb_convert_encoding($string, 'UTF-8', $fromCharset);
                 } else {
                     // Fallback: Try to convert with iconv()
-                    $iconv_converted_string = @\iconv($fromCharset, 'UTF-8\\IGNORE', $string);
+                    $iconv_converted_string = @\iconv($fromCharset, 'UTF-8//IGNORE', $string);
                     if (!$iconv_converted_string) {
                         // If iconv() could also not convert, return string as it is
                         // (unknown charset)
